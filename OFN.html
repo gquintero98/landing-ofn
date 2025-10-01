@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>CEO Consulting Lab</title>
+    <meta name="description" content="How to create an exponential income stream in OFM">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0e27;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a2f4a 100%);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(56, 178, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(56, 178, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .brand-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #38b2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand-logo img {
+            height: 80px;
+            width: auto;
+            max-width: 300px;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .hero-section .highlight {
+            background: linear-gradient(135deg, #38b2ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #38b2ff, #0099cc);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(56, 178, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(56, 178, 255, 0.4);
+        }
+
+        .stats-section {
+            background: #141B36;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px 20px;
+            background: rgba(56, 178, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(56, 178, 255, 0.2);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #38b2ff, #00d4ff);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .stat-item h3 {
+            color: #38b2ff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-section {
+            padding: 100px 0;
+            background: #0a0e27;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-subtitle {
+            color: #38b2ff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .module-card {
+            background: #141B36;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(56, 178, 255, 0.2);
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #38b2ff, #00d4ff);
+        }
+
+        .phase-image {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .phase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .phase-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #38b2ff;
+        }
+
+        .module-number {
+            color: #38b2ff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .module-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .module-description {
+            opacity: 0.8;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .module-features {
+            list-style: none;
+        }
+
+        .module-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .module-features li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #38b2ff;
+            font-size: 1.1rem;
+        }
+
+        .testimonials-section {
+            background: #141B36;
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: #0a0e27;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(56, 178, 255, 0.3);
+        }
+
+        .testimonial-result {
+            color: #38b2ff;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 200px;
+            background: #1a1f3a;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mentor-section {
+            background: #0a0e27;
+            padding: 100px 0;
+        }
+
+        .mentor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .mentor-image {
+            width: 100%;
+            height: 500px;
+            background: #1a1f3a;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .mentor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mentor-text h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .mentor-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .results-proof {
+            background: rgba(56, 178, 255, 0.1);
+            border: 1px solid rgba(56, 178, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .results-proof .chart-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #38b2ff;
+        }
+
+        .pricing-section {
+            background: #141B36;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: #0a0e27;
+            border: 2px solid rgba(56, 178, 255, 0.2);
+            border-radius: 25px;
+            padding: 60px 50px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(56, 178, 255, 0.1);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #38b2ff, #00d4ff, #38b2ff);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .pricing-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #38b2ff, #00d4ff);
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 800;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .current-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #38b2ff;
+            margin-bottom: 40px;
+        }
+
+        .member-avatars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background: #1a1f3a;
+            border-radius: 50%;
+            border: 2px solid #38b2ff;
+        }
+
+        .member-count {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .guarantee-section {
+            background: rgba(56, 178, 255, 0.05);
+            border: 1px solid rgba(56, 178, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .bonus-section {
+            background: #0a0e27;
+            padding: 80px 0;
+        }
+
+        .bonus-section .section-subtitle::before {
+            content: "\f017";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 8px;
+            color: #38b2ff;
+        }
+
+        .bonus-section .bonus-title::before {
+            content: "\f06b";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 8px;
+            color: #38b2ff;
+        }
+
+        .bonus-item {
+            background: #141B36;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 4px solid #38b2ff;
+        }
+
+        .bonus-title {
+            color: #38b2ff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .faq-section {
+            background: #0a0e27;
+            padding: 100px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #141B36;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #38b2ff;
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: #ccc;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-toggle {
+            color: #38b2ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #141B36;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid rgba(56, 178, 255, 0.1);
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #38b2ff;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #38b2ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .additional-modules {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(56, 178, 255, 0.2);
+            color: #38b2ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .mindset-section {
+            background: #141B36;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .mindset-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mindset-content h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .mindset-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .author-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .author-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1px solid rgba(56, 178, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mentor-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .author-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="brand-logo">
+                <img src="https://drive.google.com/uc?export=view&id=1z0Kegx21NC5DZuDvPER8UV1kIqCRAnIb" alt="CEO Consulting Lab Logo">
+            </div>
+            <h1>How to create an <span class="highlight">exponential income stream</span> in OFM</h1>
+            <p class="subtitle">(No prior experience or need to introduce yourself)</p>
+            <a href="#pricing" class="cta-button">Join us today</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Instant Access</h3>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <h3>Over 1,100 Satisfied Customers</h3>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Secure Purchase</h3>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-infinity"></i></div>
+                    <h3>Lifetime Access</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">THIS IS EXACTLY WHAT YOU WILL GET</div>
+                <h2 class="section-title">CEO Consulting Lab Content</h2>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="phase-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1j4jNwRdMfcV2M_4vns_BPx9FGxySUbXR" alt="Phase 1">
+                    </div>
+                    <div class="module-number">Phase 1</div>
+                    <h3 class="module-title">First Steps</h3>
+                    <p class="module-description">Build your agency's foundation and start strong from day one.</p>
+                    <ul class="module-features">
+                        <li>Business Structured Like a CEO – Learn how to organize your Drive and your processes so that your agency is
+                            ready to scale without chaos.</li>
+                        <li>Profile that Attracts Models 24/7 – Set up your branding and social media so that models want to work with you.
+                        </li>
+                        <li>Smart Recruitment – The best sources and strategies for finding models predictably and without wasting time.
+                        </li>
+                        <li>Automatic Closing – Proven scripts and messages to convert prospects into contracts quickly and easily.</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="phase-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1kgKQlmaIJ8NIJNwL5untJPUi9N1Prfx9" alt="Phase 2">
+                    </div>
+                    <div class="module-number">Phase 2</div>
+                    <h3 class="module-title">Strategic Planning & Positioning</h3>
+                    <p class="module-description">Go from beginner mode to having a growth system designed to win.</p>
+                    <ul class="module-features">
+                        <li>Step-by-Step Action Plan – Organize your calendar, set clear goals, and build a content plan that attracts
+                            clients.</li>
+                        <li>Positioning in Key Markets – Learn how to make your profile reach U.S. audiences and other Tier 1 countries.
+                        </li>
+                        <li>Real Growth Strategies – Master methods like follow/unfollow, funnels, and tactics to scale quickly.</li>
+                        <li>Optimize & Repurpose Content – Turn every post into multiple pieces and keep your brand visible every single day
+                            automated.</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="phase-image">
+                        <img src="https://drive.google.com/uc?export=view&id=165rWSm6Xi5Ajre2OrNPZco_RmOnpbNcZ" alt="Phase 3">
+                    </div>
+                    <div class="module-number">Phase 3</div>
+                    <h3 class="module-title">Advanced Chat & Monetization</h3>
+                    <p class="module-description">Turn every message into money and scale your income predictably.</p>
+                    <ul class="module-features">
+                        <li>Client Psychology – Learn how to identify client types and talk to them in a way that makes them buy more.</li>
+                        <li>Sales Sequences & Upsells – Ready-to-use scripts to sell content, upsells, and personalized offers without
+                            sounding repetitive.</li>
+                        <li>Fan Activation & Retention – Strategies to bring back old clients and keep new ones spending more time and
+                            money.</li>
+                        <li>Professional Chat Rules & System – A structure to organize your team and guarantee consistent results.</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="additional-modules">+ 3 additional modules</div>
+                    <div class="phase-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1I0dJVUmNhLTARgnK8u_XQJBY_hlxuWIU" alt="Phase 4">
+                    </div>
+                    <div class="module-number">Phase 4</div>
+                    <h3 class="module-title">Team & Full Automation</h3>
+                    <p class="module-description">Build a business that runs without you and makes money even when you're not working.</p>
+                    <ul class="module-features">
+                        <li>Find & Hire the Best – Learn where to look, how to filter, and select the ideal people for each role in your
+                            agency.</li>
+                        <li>Step-by-Step Onboarding System – A complete guide to train your team and get them ready to operate in less than
+                            a week.</li>
+                        <li>Organize & Scale Without Chaos – Keep everything centralized (Drive + Discord) so nothing gets lost and
+                            communication stays clear.</li>
+                        <li>Automated Workflows – Ready-to-delegate processes that let your team run on autopilot while you focus on
+                            scaling.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">JOIN THE COMMUNITY</div>
+                <h2 class="section-title">Member Results</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-result">First Month Success</div>
+                    <div class="testimonial-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1jh6ySRX94HOd33JX3R9zoW_dveZqhEww" alt="Result 1">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">$5K+ Monthly</div>
+                    <div class="testimonial-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1WrhhkEEJGbZrcXVeCAakN5skSbiMMOj8" alt="Result 2">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">Agency Scaling</div>
+                    <div class="testimonial-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1KVzbCphQogLPpIlT0Efmr0dcb159NePV" alt="Result 3">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">Team Building</div>
+                    <div class="testimonial-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1LqMLv6fPRQ7j2iz_PTI0LlT6Myw3doRY" alt="Result 4">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">Automation Success</div>
+                    <div class="testimonial-image">
+                        <img src="https://drive.google.com/uc?export=view&id=1JKkjPynOl_rJo0FcpcMFPYN-8ei6N75p" alt="Result 5">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-result">Client Retention</div>
+                    <div class="testimonial-image">
+                        <img src="https://drive.google.com/uc?export=view&id=10BJXQUcyClX3NKAHPrWbZJa4zW2GylQt" alt="Result 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Section -->
+    <section class="mentor-section">
+        <div class="container">
+            <div class="mentor-content">
+                <div class="mentor-image">
+                    <img src="https://drive.google.com/uc?export=view&id=1o7jmxKmLFHyfRi7Lv-gx8VhqZA4NNdIt" alt="Mentor">
+                </div>
+                <div class="mentor-text">
+                    <h3>The Smart Choice</h3>
+                    <p>If you want to master a skill or build a profitable business, learn from someone who's already done it.</p>
+                    <p>I've publicly documented my growth from $20,000/month to over $110,000/month (gross) in just 18 months.</p>
+                    <div class="results-proof">
+                        <div class="chart-icon"><i class="fas fa-chart-line"></i></div>
+                        <p><strong>My method is proven. All you have to do is follow it step by step.</strong></p>
+                    </div>
+                    <p><i class="fas fa-arrow-down"></i> Join the training now:</p>
+                    <a href="#pricing" class="cta-button"><i class="fas fa-circle" style="color: #38b2ff; margin-right: 8px;"></i>Access the
+                        training</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Gallery -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">REAL RESULTS</div>
+                <h2 class="section-title">Behind the Success</h2>
+            </div>
+            <div class="author-gallery">
+                <img src="https://drive.google.com/uc?export=view&id=1Auc6HWMRvm-ZP6NU_Yfcy0Wb_Fs91_ew" alt="Success 1">
+                <img src="https://drive.google.com/uc?export=view&id=11W-Nx5MMULRD1Yr5QNV9vtjcJZdLmE0W" alt="Success 2">
+                <img src="https://drive.google.com/uc?export=view&id=1m255S0tVr_GEys61-gOJVaFZm1L-UGtp" alt="Success 3">
+                <img src="https://drive.google.com/uc?export=view&id=164DK0JMj7jg3jXBynh_y-cMh2B755v8e" alt="Success 4">
+                <img src="https://drive.google.com/uc?export=view&id=1DAIElv9oDb_Sh2PjE-YDXjNTjAmojBUg" alt="Success 5">
+                <img src="https://drive.google.com/uc?export=view&id=1WovuczjS__ZXfHJRyiuwPcNiHkp52ylg" alt="Success 6">
+                <img src="https://drive.google.com/uc?export=view&id=1xL5Ah9b0DjK0sIvdwrLzqNdItqtrfjKB" alt="Success 7">
+                <img src="https://drive.google.com/uc?export=view&id=1T5TSHiF993QGaYk8hYhp0ggyZ4kRv5Mw" alt="Success 8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready Section -->
+    <section class="mindset-section">
+        <div class="container">
+            <div class="mindset-content">
+                <h3>Ready to get started?</h3>
+                <a href="#pricing" class="cta-button"><i class="fas fa-circle" style="color: #fff; margin-right: 8px;"></i>Take action</a>
+                <div class="member-avatars">
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                </div>
+                <p class="member-count">Join over <strong>1,100</strong> members today</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mindset Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="mindset-content">
+                <h3>Building an OFM agency isn't hard — if you know how to do it.</h3>
+                <p>Stop taking advice from people who don't know what they're talking about and can't take you where you want to go.</p>
+                <p>Start learning from those who are already living the life you want and have achieved what you're trying to build.</p>
+                <p>The world revolves around our decisions. The freedom I have today is the result of the decisions and sacrifices — of time
+                    and money — that I made in the past.</p>
+                <a href="#pricing" class="cta-button"><i class="fas fa-circle" style="color: #fff; margin-right: 8px;"></i>Take action</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">GET ACCESS TO CEO CONSULTING LAB</div>
+                <h2 class="section-title">The only program you need</h2>
+                <p class="section-description">Lifetime access to CEO Consulting LAB</p>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-logo">CC</div>
+                <h3 class="course-title">CEO Consulting Lab</h3>
+                <div class="old-price">$1297</div>
+                <div class="current-price">$57</div>
+                <a href="#" class="cta-button">Take action</a>
+
+                <div class="member-avatars">
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                </div>
+                <p class="member-count">Join over <strong>1,100</strong> members today</p>
+            </div>
+
+            <div class="guarantee-section">
+                <h3>Our guarantee</h3>
+                <p>If you don't recoup your investment within 4 months, we'll give you a full refund.</p>
+                <p>I guarantee this because I know what I'm learning works.</p>
+                <p><strong>Take action and get results, or just watch.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- One Year Section -->
+    <section class="mindset-section">
+        <div class="container">
+            <div class="mindset-content">
+                <h3>ONE YEAR IS ENOUGH.<br>IT DOESN'T HAVE TO TAKE 10 YEARS.</h3>
+                <p>You can go from where you are now to achieving your goals with one year of focus...</p>
+                <p>But only if you focus on the right business model, using the right information.</p>
+                <p>That's what I did.</p>
+                <p>Hundreds of people are succeeding with me.</p>
+                <p>Your doubt is nothing more than a lack of confidence, and yours, because what I teach obviously works.</p>
+                <p><strong>Why not you?</strong></p>
+                <a href="#pricing" class="cta-button">Take action</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section class="bonus-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Or do nothing.</h3>
+                <p>Keep watching us win. Get a 9-to-5 job.</p>
+                <div class="section-subtitle"><i class="fas fa-clock" style="margin-right: 8px;"></i>Bonos premium</div>
+                <p>In case I haven't convinced you 100% yet, here are some bonuses that will make this offer even more attractive if you
+                    join today.</p>
+            </div>
+
+            <div class="bonus-item">
+                <div class="bonus-title"><i class="fas fa-gift" style="margin-right: 8px;"></i>Bono #1</div>
+                <p>The method that allows members to sign up creators within 12/24 hours...</p>
+                <p>You probably know that a week-old agency account does not inspire confidence. Discover the exact method program members
+                    use to sign their first contracts in less than a day.</p>
+            </div>
+
+            <div class="bonus-item">
+                <div class="bonus-title"><i class="fas fa-gift" style="margin-right: 8px;"></i>Bono #2</div>
+                <p>+10 SOPs in Notion</p>
+                <p>From viral marketing strategies, automations, onboarding... everything I use personally</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-subtitle">Frequently questions</div>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        This is very new to me; I have no business experience. Is it right for me?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        If you can read and follow the instructions, you will succeed. The information in the program is correct and works
+                        TODAY.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need to have any prior knowledge or know how to use computers to get started?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Not at all. The training is designed so that a beginner with no prior knowledge can start a business and be
+                        successful.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How much time and money do you need to get started?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Many of our members opened their agencies while working full-time and studying at university, without a budget or
+                        money. Even so, they have managed to earn more than €5,000 per month. All you need is determination, to follow our
+                        steps, and to be in the right place at the right time: here and now.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can we follow the training at our own pace and in parallel with our work/studies?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Of course. It is entirely possible to complete the training while you work. Since you will have lifetime access to
+                        the training, you can view it at your own pace and from wherever you want.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="mindset-section">
+        <div class="container">
+            <div class="mindset-content">
+                <h3>Ready to get started?</h3>
+                <p>Get instant access</p>
+                <a href="#pricing" class="cta-button">Take action</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">CEO CONSULTING LAB</div>
+            <p class="footer-text">©️ 2024 CEO Consulting Lab. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const toggle = button.querySelector('.faq-toggle');
+
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    toggle.textContent = '+';
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.style.display = 'none';
+                    });
+                    document.querySelectorAll('.faq-toggle').forEach(tog => {
+                        tog.textContent = '+';
+                    });
+
+                    answer.style.display = 'block';
+                    toggle.textContent = '-';
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.module-card, .testimonial-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
