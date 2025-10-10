@@ -815,22 +815,6 @@
             line-height: 1.5;
         }
 
-        .module-icon {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 10px;
-            margin-top: 6px;
-            flex-shrink: 0;
-        }
-
-        .module-icon.red { background-color: #ff4757; }
-        .module-icon.orange { background-color: #ff7f50; }
-        .module-icon.yellow { background-color: #ffd700; }
-        .module-icon.green { background-color: #2ed573; }
-        .module-icon.blue { background-color: #38b2ff; }
-        .module-icon.purple { background-color: #a55eea; }
-
         .module-title {
             font-weight: 700;
             color: #ffffff;
@@ -868,7 +852,6 @@
         }
 
         .bonus-item::before {
-            content: "✔️";
             margin-right: 8px;
             margin-top: 1px;
         }
@@ -1026,7 +1009,7 @@
 
         .bonus-section {
             background: #0a0e27;
-            padding: 80px 0;
+            padding: 0px 0;
         }
 
         .bonus-section .section-subtitle::before {
