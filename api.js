@@ -1,4 +1,4 @@
-        // ===== COUNTDOWN FUNCTIONALITY (MODIFIED) =====
+// ===== COUNTDOWN FUNCTIONALITY (MODIFIED) =====
         let countdownInterval;
 
         function initializeCountdown() {
@@ -181,9 +181,9 @@
             }
         });
 
-        // ===== REST OF YOUR EXISTING CODE (UNCHANGED) =====
+        // ===== CAROUSEL FUNCTIONALITY (CONTENT SECTIONS) =====
 
-        // Carousel functionality
+        // Main content carousel functionality
         let currentSlide = 0;
         const totalSlides = 4;
         const carouselWrapper = document.getElementById('carouselWrapper');
@@ -191,32 +191,16 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
 
-        // Pricing carousel functionality
-        let currentPricingSlide = 0;
-        const totalPricingSlides = 2;
-        const pricingCarouselWrapper = document.getElementById('pricingCarouselWrapper');
-        const pricingIndicators = document.querySelectorAll('.pricing-indicator');
-        const pricingPrevBtn = document.getElementById('pricingPrevBtn');
-        const pricingNextBtn = document.getElementById('pricingNextBtn');
-
         function updateCarousel() {
-            const translateX = -currentSlide * 100;
-            carouselWrapper.style.transform = `translateX(${translateX}%)`;
+            if (carouselWrapper) {
+                const translateX = -currentSlide * 100;
+                carouselWrapper.style.transform = `translateX(${translateX}%)`;
 
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentSlide);
-            });
-        }
-
-        function updatePricingCarousel() {
-            const translateX = -currentPricingSlide * 100;
-            pricingCarouselWrapper.style.transform = `translateX(${translateX}%)`;
-
-            // Update indicators
-            pricingIndicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentPricingSlide);
-            });
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentSlide);
+                });
+            }
         }
 
         function nextSlide() {
@@ -234,41 +218,20 @@
             updateCarousel();
         }
 
-        function nextPricingSlide() {
-            currentPricingSlide = (currentPricingSlide + 1) % totalPricingSlides;
-            updatePricingCarousel();
+        // Event listeners for main carousel
+        if (nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
         }
-
-        function prevPricingSlide() {
-            currentPricingSlide = (currentPricingSlide - 1 + totalPricingSlides) % totalPricingSlides;
-            updatePricingCarousel();
-        }
-
-        function goToPricingSlide(slideIndex) {
-            currentPricingSlide = slideIndex;
-            updatePricingCarousel();
-        }
-
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
 
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => goToSlide(index));
         });
 
-        // Pricing carousel event listeners
-        pricingNextBtn.addEventListener('click', nextPricingSlide);
-        pricingPrevBtn.addEventListener('click', prevPricingSlide);
-
-        pricingIndicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => goToPricingSlide(index));
-        });
-
         // Auto-play carousel
         setInterval(nextSlide, 5000);
 
-        // FAQ Toggle Functionality
+        // ===== FAQ FUNCTIONALITY =====
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
@@ -278,6 +241,7 @@
                     answer.style.display = 'none';
                     toggle.textContent = '+';
                 } else {
+                    // Close all other FAQs
                     document.querySelectorAll('.faq-answer').forEach(ans => {
                         ans.style.display = 'none';
                     });
@@ -291,7 +255,7 @@
             });
         });
 
-        // Smooth Scrolling
+        // ===== SMOOTH SCROLLING =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -305,7 +269,7 @@
             });
         });
 
-        // Add scroll animations
+        // ===== SCROLL ANIMATIONS =====
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -327,7 +291,7 @@
             observer.observe(el);
         });
 
-        // Modal functionality
+        // ===== MODAL FUNCTIONALITY =====
         const modals = {
             terms: document.getElementById('termsModal'),
             privacy: document.getElementById('privacyModal'),
@@ -357,20 +321,26 @@
         }
 
         // Event listeners for opening modals
-        links.terms.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal('terms');
-        });
+        if (links.terms) {
+            links.terms.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('terms');
+            });
+        }
 
-        links.privacy.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal('privacy');
-        });
+        if (links.privacy) {
+            links.privacy.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('privacy');
+            });
+        }
 
-        links.contact.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal('contact');
-        });
+        if (links.contact) {
+            links.contact.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('contact');
+            });
+        }
 
         // Event listeners for closing modals
         document.querySelectorAll('.close').forEach(closeBtn => {
@@ -386,19 +356,9 @@
 
         // Close modal when clicking outside of it
         Object.values(modals).forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                Object.values(modals).forEach(modal => {
-                    if (modal.style.display === 'block') {
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
                         modal.style.display = 'none';
                         document.body.style.overflow = 'auto';
                     }
@@ -406,13 +366,28 @@
             }
         });
 
-        // Add interactive effects for countdown
-        document.querySelectorAll('.time-unit').forEach(unit => {
-            unit.addEventListener('mouseenter', () => {
-                unit.style.transform = 'translateY(-5px) scale(1.05)';
-            });
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                Object.values(modals).forEach(modal => {
+                    if (modal && modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
 
-            unit.addEventListener('mouseleave', () => {
-                unit.style.transform = 'translateY(0) scale(1)';
+        // ===== INTERACTIVE EFFECTS FOR COUNTDOWN =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects for countdown time units
+            document.querySelectorAll('.time-unit').forEach(unit => {
+                unit.addEventListener('mouseenter', () => {
+                    unit.style.transform = 'translateY(-5px) scale(1.05)';
+                });
+
+                unit.addEventListener('mouseleave', () => {
+                    unit.style.transform = 'translateY(0) scale(1)';
+                });
             });
         });
